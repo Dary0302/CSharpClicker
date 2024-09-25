@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "MS7LBFmFUBjO4ZszR4bmkVX4JWkHBMTlfkUfqVmqyEc=",
+  "Source": "CSharpClickerWeb",
+  "BasePath": "_content/CSharpClickerWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
