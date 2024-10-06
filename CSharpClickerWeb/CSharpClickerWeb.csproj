@@ -7,10 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="InfrastructureAbstractions\" />
-      <Folder Include="InfrastructureDataAccess\" />
+      <Folder Include="Infrastructure.Abstractions\" />
       <Folder Include="InfrastructureImplementations\" />
       <Folder Include="UseCases\" />
     </ItemGroup>
+
+    <ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.8" />
+	</ItemGroup>
 
 </Project>
