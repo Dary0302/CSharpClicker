@@ -2,6 +2,15 @@
 
 @section styles {
     <link href="@Url.Content("~/css/index.css")" rel="stylesheet">
+<style>
+    body {
+        background-image: url('./background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+</style>
 }
 
 <div class="row">
@@ -16,8 +25,8 @@
         </div>
     </div>
 
-    <div class="col justify-content-center" id="movement-container" style="position: relative; width: 400px; height: 400px; border: 1px solid black;">
-        <button id="clickitem" class="click-item bg-transparent" style="position: absolute; width: 200px; height: 200px; background-image: url('./ore.png'); background-size: cover; background-position: center; border-radius: 50px">
+    <div class="col justify-content-center" id="movement-container" style="position: relative; width: 400px; height: 400px; border: 1px solid white;">
+        <button id="clickitem" class="click-item bg-transparent border-0" style="position: absolute; width: 200px; height: 200px; background-image: url('./Астероид.png'); background-size: cover; background-position: center; border-radius: 50px">
         </button>
     </div>
 
@@ -66,7 +75,7 @@
             var containerHeight = container.height();
             var buttonWidth = button.width();
             var buttonHeight = button.height();
-            var maxRecordScore = 300_000_000;
+            var maxRecordScore = 30_000;
             var initialSize = 200; // Initial size of the button in pixels
 
             function moveButton() {

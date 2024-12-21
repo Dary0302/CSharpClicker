@@ -29,11 +29,11 @@ public static class DbContextInitializer
 
     public static void InitializeDbContext(AppDbContext appDbContext)
     {
-        const string Boost1 = "Рудокоп";
-        const string Boost2 = "Призрак";
-        const string Boost3 = "Стражник";
-        const string Boost4 = "Маг огня";
-        const string Boost5 = "Рудный барон";
+        const string Boost1 = "Добавить андроида на автокарьерный шатл";
+        const string Boost2 = "Добавить ПЭТН на автокарьерный шатл";
+        const string Boost3 = "Малый плазменный добыватель руды";
+        const string Boost4 = "Добавить ядерную взрывчетку на автокарьерный шатл";
+        const string Boost5 = "Плазменный добыватель руды";
 
         appDbContext.Database.Migrate();
 
