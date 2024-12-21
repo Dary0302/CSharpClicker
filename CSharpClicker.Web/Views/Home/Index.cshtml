@@ -9,6 +9,15 @@
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        color: orange;
+    }
+    #clickitem {
+        background-image: url('./Астероид.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+        background-color: transparent;
     }
 </style>
 }
@@ -17,16 +26,17 @@
 
     <div class="col">
         <div>
-            <h3>Добро пожаловать в колонию, @Model.User.UserName</h3>
-            <h4>У тебя уже накоплено <span id="current_score">@Model.User.CurrentScore</span> кусков руды</h4>
-            <h4>Всего ты добыл <span id="record_score">@Model.User.RecordScore</span> кусков руды</h4>
-            <h4>С одного удара киркой ты добываешь <span id="profit_per_click">@Model.User.ProfitPerClick</span> кусков</h4>
-            <h4>Твои подчиненные ежесекундно добывают <span id="profit_per_second">@Model.User.ProfitPerSecond</span> кусков</h4>
+            <h3>Добро пожаловать на капитанский мостик, @Model.User.UserName! Отсюда ты будешь управлять и следить за добычей руды с астероида</h3>
+            <h4>Каждый твой клик мыши - автокарьерный шатл, который ты можешь сняряжать, покупая улучшения</h4>
+            <h4>У тебя уже накоплено <span id="current_score">@Model.User.CurrentScore</span> шт. руды</h4>
+            <h4>Всего ты добыл <span id="record_score">@Model.User.RecordScore</span> шт. руды</h4>
+            <h4>С одной отправки шатла ты добываешь <span id="profit_per_click">@Model.User.ProfitPerClick</span> шт. руды</h4>
+            <h4>Твои добыватели ежесекундно добывают <span id="profit_per_second">@Model.User.ProfitPerSecond</span> шт. руды</h4>
         </div>
     </div>
 
-    <div class="col justify-content-center" id="movement-container" style="position: relative; width: 400px; height: 400px; border: 1px solid white;">
-        <button id="clickitem" class="click-item bg-transparent border-0" style="position: absolute; width: 200px; height: 200px; background-image: url('./Астероид.png'); background-size: cover; background-position: center; border-radius: 50px">
+    <div class="col justify-content-center" id="movement-container" style="position: relative; width: 400px; height: 400px;">
+        <button id="clickitem" class="click-item bg-transparent border-0" style="position: absolute; width: 200px; height: 200px; border-radius: 50px;">
         </button>
     </div>
 
@@ -63,6 +73,20 @@
         </div>
     </div>
 </div>
+
+@functions {
+    
+    private static string GetDeclension(long number, string nominative, string genitiveSingular, string genitivePlural)
+{
+    if (number % 10 == 1 && number % 100 != 11)
+        return nominative;
+    if (number % 10 >= 2 && number % 10 <= 4 && (number % 100 < 10 || number % 100 >= 20))
+    {
+        return genitiveSingular;
+    }
+    return genitivePlural;
+}
+}
 
 @section scripts {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
