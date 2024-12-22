@@ -42,9 +42,9 @@ public static class DbContextInitializer
 
         AddBoostIfNotExist(Boost1, price: 100, profit: 1);
         AddBoostIfNotExist(Boost2, price: 500, profit: 15);
-        AddBoostIfNotExist(Boost3, price: 2000, profit: 60, isAuto: true);
-        AddBoostIfNotExist(Boost4, price: 10000, profit: 400);
-        AddBoostIfNotExist(Boost5, price: 100000, profit: 5000, isAuto: true);
+        AddBoostIfNotExist(Boost3, price: 1000, profit: 60, isAuto: true);
+        AddBoostIfNotExist(Boost4, price: 3000, profit: 300);
+        AddBoostIfNotExist(Boost5, price: 5000, profit: 600, isAuto: true);
 
         appDbContext.SaveChanges();
 
