@@ -74,20 +74,6 @@
     </div>
 </div>
 
-@functions {
-    
-    private static string GetDeclension(long number, string nominative, string genitiveSingular, string genitivePlural)
-{
-    if (number % 10 == 1 && number % 100 != 11)
-        return nominative;
-    if (number % 10 >= 2 && number % 10 <= 4 && (number % 100 < 10 || number % 100 >= 20))
-    {
-        return genitiveSingular;
-    }
-    return genitivePlural;
-}
-}
-
 @section scripts {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="~/js/index.js"></script>

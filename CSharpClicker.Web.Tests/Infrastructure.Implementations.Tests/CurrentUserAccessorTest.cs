@@ -24,7 +24,7 @@ namespace CSharpClicker.Web.Tests.Infrastructure.Implementations.Tests
         {
             A.CallTo(() => contextAccessor.HttpContext).Returns(null);
 
-            Action act = () => currentUserAccessor.GetCurrentUserId();
+            var act = () => currentUserAccessor.GetCurrentUserId();
 
             act.Should().Throw<InvalidOperationException>().WithMessage("Cannot get HTTP context.");
         }
@@ -39,7 +39,7 @@ namespace CSharpClicker.Web.Tests.Infrastructure.Implementations.Tests
             A.CallTo(() => httpContext.User).Returns(user);
             A.CallTo(() => contextAccessor.HttpContext).Returns(httpContext);
 
-            Action act = () => currentUserAccessor.GetCurrentUserId();
+            var act = () => currentUserAccessor.GetCurrentUserId();
 
             act.Should().Throw<InvalidOperationException>().WithMessage("Cannot parse user ID.");
         }
